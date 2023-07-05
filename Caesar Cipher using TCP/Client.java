@@ -61,6 +61,9 @@ public class Client {
                     }
                 }
                 System.out.println(br.readLine());
+                break;
+                default:
+                    break;
             }
             if(choice>4)
             {
