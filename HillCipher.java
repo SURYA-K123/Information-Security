@@ -36,6 +36,15 @@ public class HillCipher {
         return multipliedMatrix;
     }
 }
+int[][] scalarMultiply(int scalar, int mat[][]) {
+        int mat1[][] = new int[mat.length][mat.length];
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[0].length; j++) {
+                mat1[i][j] = getMod(scalar * mat[i][j]);
+            }
+        }
+        return mat1;
+    }
 class Main
 {
     public static void main(String[] args) {
