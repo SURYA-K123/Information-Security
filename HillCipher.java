@@ -21,6 +21,23 @@ public class HillCipher {
         }
         return matrix;
     }
+    int multiplicativeInverse(int val) {
+        int q, r, a, b, t;
+        int t1 = 0;
+        int t2 = 1;
+        a = 26;
+        b = val;
+        while (a != 1 && b != 0) {
+            q = a / b;
+            r = a % b;
+            t = t1 - (q * t2);
+            a = b;
+            b = r;
+            t1 = t2;
+            t2 = t;
+        }
+        return getMod(t1+t2);
+    }
     int[][] adjointMatrix(int mat[][]) {
         int length = mat.length;
         boolean isNegative = false;
