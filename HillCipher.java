@@ -21,6 +21,12 @@ public class HillCipher {
         }
         return matrix;
     }
+    int getMod(int val) {
+        if (val < 0) {
+            return (val % 26) + 26;
+        }
+        return val % 26;
+    }
     int multiplicativeInverse(int val) {
         int q, r, a, b, t;
         int t1 = 0;
